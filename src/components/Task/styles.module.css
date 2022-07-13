@@ -1,0 +1,84 @@
+.taskWrapper {
+  display: flex;
+  max-width: 46rem;
+  margin: 10px auto;
+
+  padding: 1rem 2rem 1rem 3.5rem;
+  gap: 1rem;
+  color:var(--gray-100);
+  background: var(--gray-500);
+  border-radius: 8px;
+  border: 1px solid var(--gray-400);
+  position: relative;
+ 
+  
+}
+.containerTitle  {
+  display: flex;
+  max-width: 600px;
+}
+
+.labelContainer label {
+  display:flex;
+  position: relative;
+  font-size: 14px;
+  
+}
+
+.labelContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkMark {
+  position: absolute;
+  top: 19px;
+  left: 20px;
+  height: 1rem;
+  width: 1rem;
+  background-color: transparent;
+  border: 1px solid var(--blue-400);
+  border-radius: 100%;
+}
+
+.labelContainer:hover input ~ .checkMark {
+  background-color: none;
+}
+
+.labelContainer input:checked ~ .checkMark {
+  background-color: var(--blue-700);
+  
+}
+
+.checkMark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.labelContainer input:checked ~ .checkMark:after {
+  display: block;
+}
+
+.labelContainer .checkMark:after {
+  left: 4px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.taskWrapper button {
+  border: 0;
+  background: transparent;
+  position: absolute;
+  left: 675px;
+  cursor: pointer;
+}
